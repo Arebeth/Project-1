@@ -41,8 +41,8 @@ body {
 	margin-top: 40px;
 	text-align: center;
 	background-image: url('./peacock.jpg');
-	-moz-background-image: url('./peacock.jpg');
-	-webkit-background-image: url('./peacock.jpg');
+	/*-moz-background-image: url('./peacock.jpg'); //I thought vendor prefixes were needed, but I was wrong. Surprise, surprise.
+	-webkit-background-image: url('./peacock.jpg');*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	/*background-color: #BBA28E;*/
@@ -56,10 +56,9 @@ body {
 	margin-right: auto;
 	margin-top: 40px;
 	text-align: center;
-	/*background-image: url('./bigcat.jpg');*/
 	background-image: url('./LionFlower.jpg');
-	-moz-background-image: url('./LionFlower.jpg');
-	-webkit-background-image: url('./LionFlower.jpg');
+	/*-moz-background-image: url('./LionFlower.jpg');
+	-webkit-background-image: url('./LionFlower.jpg');*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: white;
@@ -116,7 +115,6 @@ th {
 	color: white;
 
 }
-
 td {
 	height: 60px;
 	border: 1px solid #593415;
@@ -124,5 +122,4 @@ td {
 	font-size: 30px;
 	background-color: #A15413;
 	color: white;
-
 }

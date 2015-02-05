@@ -3,88 +3,88 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<!-- adding bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> <!-- adding bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./main.css"> <!-- adding link to css stylesheet -->
 	
 </head>
 <body>
-	<div class="container">
+	<div class="container"> <!-- main container -->
 		<div class="row">
-			<div class="col-xs-2 col-lg-2">
+			<div class="col-xs-2 col-lg-2"> <!-- column of players -->
 				<div class="row-plyr1">
 					<div class="player-1"></div>
 					<div class="playername">Player One</div>
 					<div class="score">Score:</div>
 				</div>
-				<div class="row-plyr2"></div>
+				<div class="row-plyr2">
 					<div class="player-2"></div>
 					<div class="playername">Player Two</div>
 					<div class="score">Score:</div>
 				</div>
-			<div class="col-xs-10 col-lg-10">
+			</div> <!-- column of players -->
+			<div class="col-xs-10 col-lg-10"> <!-- column with game board -->
 				<div class="headline">
 					<h2>Game Play</h2>
 				</div>
-				<div class="board">
+				<div id="choice"><p></p></div>
+				<div class="board"> 
 					<table>
 						<thead>
 							<tr>
-								<th>Category 1 </th>
-								<th>Category 2 </th>
-								<th>Category 3 </th>
-								<th>Category 4 </th>
-								<th>Category 5 </th>
+								<th>Category A </th>
+								<th>Category B </th>
+								<th>Category C </th>
+								<th>Category D </th>
+								<th>Category E </th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td data-id="1">$100</td>
-								<td data-id="2">$100</td>
-								<td data-id="3">$100</td>
-								<td data-id="4">$100</td>
-								<td data-id="5">$100</td>
+								<td data-id="1" data-amt="100">$100</td>
+								<td data-id="6" data-amt="100">$100</td>
+								<td data-id="11" data-amt="100">$100</td>
+								<td data-id="16" data-amt="100">$100</td>
+								<td data-id="21" data-amt="100">$100</td>
 							</tr>
 							<tr>
-								<td data-id="6">$200</td>
-								<td data-id="7">$200</td>
-								<td data-id="8">$200</td>
-								<td data-id="9">$200</td>
-								<td data-id="10">$200</td>
+								<td data-id="2" data-amt="200">$200</td>
+								<td data-id="7" data-amt="200">$200</td>
+								<td data-id="12" data-amt="200">$200</td>
+								<td data-id="17" data-amt="200">$200</td>
+								<td data-id="22" data-amt="200">$200</td>
 							</tr>
 							<tr>
-								<td data-id="11">$300</td>
-								<td data-id="12">$300</td>
-								<td data-id="13">$300</td>
-								<td data-id="14">$300</td>
-								<td data-id="15">$300</td>
+								<td data-id="3" data-amt="300">$300</td>
+								<td data-id="8" data-amt="300">$300</td>
+								<td data-id="13" data-amt="300">$300</td>
+								<td data-id="18" data-amt="300">$300</td>
+								<td data-id="23" data-amt="300">$300</td>
 							</tr>
 							<tr>
-								<td data-id="16">$400</td>
-								<td data-id="17">$400</td>
-								<td data-id="18">$400</td>
-								<td data-id="19">$400</td>
-								<td data-id="20">$400</td>
+								<td data-id="4" data-amt="400">$400</td>
+								<td data-id="9" data-amt="400">$400</td>
+								<td data-id="14" data-amt="400">$400</td>
+								<td data-id="19" data-amt="400">$400</td>
+								<td data-id="24" data-amt="400">$400</td>
 							</tr>
 							<tr>
-								<td data-id="21">$89</td>
-								<td data-id="22">$254</td>
-								<td data-id="23">$73</td>
-								<td data-id="24">$11</td>
-								<td data-id="25">$607</td>
+								<td data-id="5" data-amt="89">$89</td>
+								<td data-id="10" data-amt="254">$254</td>
+								<td data-id="15" data-amt="73">$73</td>
+								<td data-id="20" data-amt="11">$11</td>
+								<td data-id="25" data-amt="607">$607</td>
 							</tr>
 						</tbody>
-						<tfoot></tfoot>
+						<tfoot></tfoot> <!-- useless yet obligatory table foot -->
 					</table>
 				</div>
-			</div>
+			</div> <!-- end of column with game board -->
 		</div>
-	</div>
+	</div> <!-- end of main container -->
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="data.js"></script>
-	<!-- adding javascript -->
-	<script type="text/javascript" src="app.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!-- adding jquery link -->
+	<script type="text/javascript" src="data.js"></script> <!-- adding data file attachment -->
+	<script type="text/javascript" src="app.js"></script> <!-- adding app.js attachment -->
 	
 </body>
 </html>

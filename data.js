@@ -1,18 +1,22 @@
-var data = [{
-	question: "what is your name?",
-	mcAnswer1: "",
-	mcAnswer2: "",
-	mcAnswer3: "",
-	realAnswer: "answer",
+//define "data" as array of objects, each of which are trivia questions
+var data = [
+//each question includes question + 3 multiple choice answers, a true answer and id
+//id corresponds with data-id in html
+{
+	question: "what grade did Elie get in microeconomics because he partied too hard???",
+	mcAnswer1: "a",
+	mcAnswer2: "b",
+	mcAnswer3: "c",
+	realAnswer: "c",
 	id: 1,
 	category: "Category A"
 },
 {
 	question: "what is your name 2?",
-	mcAnswer1: "",
-	mcAnswer2: "",
-	mcAnswer3: "",
-	realAnswer: "answer 2",
+	mcAnswer1: "easy",
+	mcAnswer2: "as",
+	mcAnswer3: "do re me",
+	realAnswer: "do re me",
 	id: 2,
 	category: "Category B"
 },
@@ -24,6 +28,7 @@ var data = [{
 	realAnswer: "answer 3",
 	id: 3,
 	category: "Category C",
+},
 {
 	question: "what is your name?",
 	mcAnswer1: "",
