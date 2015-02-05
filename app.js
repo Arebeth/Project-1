@@ -7,37 +7,38 @@ $(document).ready(function() {
  	var counter = 0;
  	var playerOneScore = 0;
  	var playerTwoScore = 0;
+ 	$(".row-plyr1").addClass("currentTurn");
 
  	function identifyTurn () {
-			$(".row-plyr1").css("border", "none");
-			$(".row-plyr2").css("border", "none");
 			if (counter%2===0) {
-				$(".row-plyr1").css("border", "4px solid #994500");
-				//alert("It's Player One's Turn. Please choose a question.");
+				// turn on currentTurn class for player one, turn it off for player 2
+				$(".row-plyr1").toggleClass("currentTurn"); //chose to highlight the player instead of alerting player rotation
+				$(".row-plyr2").toggleClass("currentTurn");
 			} else {
-				$(".row-plyr2").css("border", "4px solid #994500");
-				//alert("It's Player Two's Turn. Please choose a question.");
+				// turn on currentTurn class for player two, turn it off for player one
+				$(".row-plyr1").toggleClass("currentTurn");
+				$(".row-plyr2").toggleClass("currentTurn");
 			}
  	}
 
- 	function answerIsCorrect (answer) {
-		return $("input[type=radio]:checked").next().text() === answer;
+ 	function answerIsCorrect (answer) {  //used method extraction to refactor a confusing piece of code
+		return $("input[type=radio]:checked").next().text() === answer; //return the text of the label next to the radio
  	}
 
- 	identifyTurn();
+ 	
+ 	
+ 	
+ 	console.log(counter);
 
-//add an event listener to each td element so that...
-//when the element is clicked...
 	$("td").on("click", function (){
 		$(this).empty();
-		//number = the clicked td's data-id# (from html)
 		var number = $(this).attr("data-id"); 
 		var amount = parseInt($(this).attr("data-amt")); 
-		//alert (typeof amount);
+		//alert (typeof amount); -- keeping this zombie code for posterity as a way to remember typeof
 
-//stop at each object of the array	
+
 		data.forEach(function (val) {
-//if number(converted to integer) = the data id#
+
 			if (parseInt(number) === val.id) {
 				var label1 = ("<label>"+ val.mcAnswer1 + "</label>");
  				var label2 = ("<label>" + val.mcAnswer2 + "</label>"); 
@@ -52,7 +53,7 @@ $(document).ready(function() {
 				$("#choice p").append(form);
 
 				form.empty();
-				var radio1 = $("<input type='radio' name='answer'>");
+				var radio1 = $("<input type='radio' name='answer'>"); //moved variables to prevent radio click position from locking
  				var radio2 = $("<input type='radio' name='answer'>");
  				var radio3 = $("<input type='radio' name='answer'>");
 				form.append(radio1);
@@ -65,33 +66,44 @@ $(document).ready(function() {
    
 				answer = val.realAnswer;
 			}
-		});
+		}); //end of form appending
 
 		$(".answerForm").on("submit",function(e){
 			e.preventDefault();
+
 	 		if(answerIsCorrect(answer)){
+	 			alert("You're correct! It's your turn again!");
 	 			if (counter%2===0) {
 	 				playerOneScore += amount;
+	 				
 	 			} else {
 	 				playerTwoScore += amount;
 	 			}
-	 			alert("You are correct!");
+	 			
 	 		}
 	 		else{
 	 			alert("Sorry, that was incorrect. The correct answer is " + answer);
 	 			counter++;
+	 			identifyTurn(); //player rotation function - ONLY CALL WHEN ANSWER IS INCORRECT
+	 			if(counter % 2 === 0){
+	 				alert("It is now player one's turn!");
+	 			}
+	 			else{
+	 				alert("It is now player two's turn!");
+	 			}
+	 			
 	 		}
+	 		
+	 		console.log(counter);
 
 	 		$(".row-plyr1 .score").text(playerOneScore);
 	 		$(".row-plyr2 .score").text(playerTwoScore);
 
 	 		
 	 		$("#choice p").fadeOut(400, function () {
-	 			$(".board").fadeIn(400, function (){
-	 				
-	 			}) ;
-	 		});	
-		});	
+	 			$(".board").fadeIn(400, function (){});
+	 		});
+		});	//end of on-click for submit button
 	});
 
 });

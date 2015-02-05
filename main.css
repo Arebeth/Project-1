@@ -27,10 +27,23 @@ body {
 	height: 550px;	
 	background-color: #AA6C39;
 }
+.row-plyr1 {
+	height: 218px;
+	width: 158px;
+	margin-top: 40px;
+}
+.row-plyr2 {
+	height: 218px;
+	width: 158px;
+	margin-top: 40px;
+}
 .col-xs-10 {
 	border: 1px solid #593415;
 	height: 550px;
 	background-color: #AA6C39;
+}
+.currentTurn{
+	border: 4px solid #994500;
 }
 .player-1 {
 	border: 1px solid #593415;
@@ -38,7 +51,6 @@ body {
 	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 40px;
 	text-align: center;
 	background-image: url('./peacock.jpg');
 	/*-moz-background-image: url('./peacock.jpg'); //I thought vendor prefixes were needed, but I was wrong. Surprise, surprise.
@@ -54,7 +66,6 @@ body {
 	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 40px;
 	text-align: center;
 	background-image: url('./LionFlower.jpg');
 	/*-moz-background-image: url('./LionFlower.jpg');
