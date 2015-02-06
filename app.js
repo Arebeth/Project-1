@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 //define variables and functions on highest scope needed
  	var form = $("<form action='javascript:void(0);'class ='answerForm'></form>");
- 	var submit = $("<input type='submit' value='Submit Answer'>");
+ 	var submit = $("<input type='submit' value='Submit Answer'> class='submitButton'");
  	var answer;
  	var counter = 0;
  	var playerOneScore = 0;
@@ -25,13 +25,15 @@ $(document).ready(function() {
 		return $("input[type=radio]:checked").next().text() === answer; //return the text of the label next to the radio
  	}
 
- 	
- 	
- 	
- 	console.log(counter);
+ 	function disableCell() {
+ 		$("td").css("pointer-event", "none");
+ 	}
+//done defining functions
 
-	$("td").on("click", function (){
-		$(this).empty();
+//begin game play
+	$("td").on("click", function (){ //on click of question (in td)
+		$(this).empty(); //empty the value of the cell to show it has been clicked
+		disableCell(); //NOT WORKING YET - disable the cell to prevent it from being clicked again
 		var number = $(this).attr("data-id"); 
 		var amount = parseInt($(this).attr("data-amt")); 
 		//alert (typeof amount); -- keeping this zombie code for posterity as a way to remember typeof
@@ -40,28 +42,28 @@ $(document).ready(function() {
 		data.forEach(function (val) {
 
 			if (parseInt(number) === val.id) {
-				var label1 = ("<label>"+ val.mcAnswer1 + "</label>");
- 				var label2 = ("<label>" + val.mcAnswer2 + "</label>"); 
- 				var label3 = ("<label>" + val.mcAnswer3 + "</label>");
+				var answer1 = ("<label> <input type='radio' name='answer' class='radio'>" + " " + val.mcAnswer1 + "</label><br>");
+ 				var answer2 = ("<label> <input type='radio' name='answer' class='radio'>" + " " + val.mcAnswer2 + "</label><br>"); 
+ 				var answer3 = ("<label> <input type='radio' name='answer' class='radio'>" + " " + val.mcAnswer3 + "</label><br>");
 				
 				$(".board").fadeOut(400, function () {
 					$("#choice p").fadeIn(400);
 				}); 
 
 				$("#choice p").empty();
-				$("#choice p").append(val.question);
+				$("#choice p").append("<span>" + val.question+ "</span>");
 				$("#choice p").append(form);
 
 				form.empty();
-				var radio1 = $("<input type='radio' name='answer'>"); //moved variables to prevent radio click position from locking
- 				var radio2 = $("<input type='radio' name='answer'>");
- 				var radio3 = $("<input type='radio' name='answer'>");
-				form.append(radio1);
-				form.append(label1);				
-				form.append(radio2);
-				form.append(label2);
-				form.append(radio3);
-				form.append(label3);
+				//var radio1 = $("<input type='radio' name='answer' class='radio'>"); //moved variables to prevent radio click position from locking
+ 				//var radio2 = $("<input type='radio' name='answer' class='radio'>");
+ 				//var radio3 = $("<input type='radio' name='answer' class='radio'>");
+				//form.append(radio1);
+				form.append(answer1);			
+				//form.append(radio2);
+				form.append(answer2);
+				//form.append(radio3);
+				form.append(answer3);
 				form.append(submit);
    
 				answer = val.realAnswer;
@@ -78,8 +80,7 @@ $(document).ready(function() {
 	 				
 	 			} else {
 	 				playerTwoScore += amount;
-	 			}
-	 			
+	 			}		
 	 		}
 	 		else{
 	 			alert("Sorry, that was incorrect. The correct answer is " + answer);
@@ -90,16 +91,12 @@ $(document).ready(function() {
 	 			}
 	 			else{
 	 				alert("It is now player two's turn!");
-	 			}
-	 			
+	 			}		
 	 		}
-	 		
-	 		console.log(counter);
 
 	 		$(".row-plyr1 .score").text(playerOneScore);
 	 		$(".row-plyr2 .score").text(playerTwoScore);
 
-	 		
 	 		$("#choice p").fadeOut(400, function () {
 	 			$(".board").fadeIn(400, function (){});
 	 		});

@@ -3,82 +3,82 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> <!-- adding bootstrap -->
-	<link rel="stylesheet" type="text/css" href="./main.css"> <!-- adding link to css stylesheet -->
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> <!-- link to bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./main.css"> <!-- link to css stylesheet -->
 </head>
+
 <body>
 	<div class="container"> <!-- main container -->
 		<div class="row">
-			<div class="col-xs-2 col-lg-2"> <!-- column of players -->
-				<div class="row-plyr1">
+			<div class="col-xs-2 col-lg-2"> <!-- players column  -->
+				<div class="row-plyr1"> <!-- div w/ player 1 info -->
 					<div class="player-1"></div>
 					<div class="playername">Player One</div>
 					<div class="score">Score:</div>
 				</div>
-				<div class="row-plyr2">
+				<div class="row-plyr2"> <!-- div w/ player 2 info -->
 					<div class="player-2"></div>
 					<div class="playername">Player Two</div>
 					<div class="score">Score:</div>
 				</div>
-			</div> <!-- column of players -->
-			<div class="col-xs-10 col-lg-10"> <!-- column with game board -->
+			</div> <!-- end of players column -->
+			<div class="col-xs-10 col-lg-10"> <!-- column for game board & headline -->
 				<div class="headline">
 					<h2>Game Play</h2>
 				</div>
-				<div id="choice"><p></p></div>
-				<div class="board"> 
+				<div id="choice"><p></p></div> <!-- div will hold questions when they fade in -->
+				<div class="board"> <!-- game board container-->
 					<table>
 						<thead>
-							<tr>
-								<th>Category A </th>
-								<th>Category B </th>
-								<th>Category C </th>
-								<th>Category D </th>
-								<th>Category E </th>
+							<tr> <!-- game categories-->
+								<th data-category="A">Shit My Grandma Says</th>
+								<th data-category="B">Category B </th>
+								<th data-category="C">Category C </th>
+								<th data-category="D">Category D </th>
+								<th data-category="E">Stuff Crazy Carl Actually Did</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<tr> <!-- game question holders-->
 								<td data-id="1" data-amt="100">$100</td>
-								<td data-id="6" data-amt="100">$100</td>
-								<td data-id="11" data-amt="100">$100</td>
-								<td data-id="16" data-amt="100">$100</td>
-								<td data-id="21" data-amt="100">$100</td>
+								<td data-id="2" data-amt="100">$100</td>
+								<td data-id="3" data-amt="100">$100</td>
+								<td data-id="4" data-amt="100">$100</td>
+								<td data-id="5" data-amt="100">$100</td>
 							</tr>
 							<tr>
-								<td data-id="2" data-amt="200">$200</td>
+								<td data-id="6" data-amt="200">$200</td>
 								<td data-id="7" data-amt="200">$200</td>
-								<td data-id="12" data-amt="200">$200</td>
-								<td data-id="17" data-amt="200">$200</td>
-								<td data-id="22" data-amt="200">$200</td>
+								<td data-id="8" data-amt="200">$200</td>
+								<td data-id="9" data-amt="200">$200</td>
+								<td data-id="10" data-amt="200">$200</td>
 							</tr>
 							<tr>
-								<td data-id="3" data-amt="300">$300</td>
-								<td data-id="8" data-amt="300">$300</td>
+								<td data-id="11" data-amt="300">$300</td>
+								<td data-id="12" data-amt="300">$300</td>
 								<td data-id="13" data-amt="300">$300</td>
-								<td data-id="18" data-amt="300">$300</td>
-								<td data-id="23" data-amt="300">$300</td>
+								<td data-id="14" data-amt="300">$300</td>
+								<td data-id="15" data-amt="300">$300</td>
 							</tr>
 							<tr>
-								<td data-id="4" data-amt="400">$400</td>
-								<td data-id="9" data-amt="400">$400</td>
-								<td data-id="14" data-amt="400">$400</td>
+								<td data-id="16" data-amt="400">$400</td>
+								<td data-id="17" data-amt="400">$400</td>
+								<td data-id="18" data-amt="400">$400</td>
 								<td data-id="19" data-amt="400">$400</td>
-								<td data-id="24" data-amt="400">$400</td>
+								<td data-id="20" data-amt="400">$400</td>
 							</tr>
 							<tr>
-								<td data-id="5" data-amt="89">$89</td>
-								<td data-id="10" data-amt="254">$254</td>
-								<td data-id="15" data-amt="73">$73</td>
-								<td data-id="20" data-amt="11">$11</td>
+								<td data-id="21" data-amt="89">$89</td>
+								<td data-id="22" data-amt="254">$254</td>
+								<td data-id="23" data-amt="73">$73</td>
+								<td data-id="24" data-amt="11">$11</td>
 								<td data-id="25" data-amt="607">$607</td>
 							</tr>
 						</tbody>
 						<tfoot></tfoot> <!-- useless yet obligatory table foot -->
 					</table>
 				</div>
-			</div> <!-- end of column with game board -->
+			</div> <!-- end of game board column -->
 		</div>
 	</div> <!-- end of main container -->
 

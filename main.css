@@ -133,4 +133,16 @@ td {
 	font-size: 30px;
 	background-color: #A15413;
 	color: white;
+	pointer-events: auto;
+}
+
+.radio {
+	display: inline;
+	
+}
+label {
+	font-size: 20px;
+}
+span {
+	font-size: 40px;
 }
