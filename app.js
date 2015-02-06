@@ -25,15 +25,18 @@ $(document).ready(function() {
 		return $("input[type=radio]:checked").next().text() === answer; //return the text of the label next to the radio
  	}
 
- 	function disableCell() {
- 		$("td").css("pointer-event", "none");
+ 	function disableCell(cell) {
+ 		$(cell).addClass("alreadyAnswered");
  	}
 //done defining functions
 
 //begin game play
 	$("td").on("click", function (){ //on click of question (in td)
+		if ($(this).hasClass("alreadyAnswered")) {
+			return;
+		}
 		$(this).empty(); //empty the value of the cell to show it has been clicked
-		disableCell(); //NOT WORKING YET - disable the cell to prevent it from being clicked again
+		disableCell(this); //NOT WORKING YET - disable the cell to prevent it from being clicked again
 		var number = $(this).attr("data-id"); 
 		var amount = parseInt($(this).attr("data-amt")); 
 		//alert (typeof amount); -- keeping this zombie code for posterity as a way to remember typeof
