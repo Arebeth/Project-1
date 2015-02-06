@@ -45,16 +45,16 @@ $(document).ready(function() {
 		data.forEach(function (val) {
 
 			if (parseInt(number) === val.id) {
-				var answer1 = ("<label> <input type='radio' name='answer' class='radio'>" + " " + val.mcAnswer1 + "</label><br>");
- 				var answer2 = ("<label> <input type='radio' name='answer' class='radio'>" + " " + val.mcAnswer2 + "</label><br>"); 
- 				var answer3 = ("<label> <input type='radio' name='answer' class='radio'>" + " " + val.mcAnswer3 + "</label><br>");
+				var answer1 = ("<label> <input type='radio' name='answer' class='radio'> <span>" + val.mcAnswer1 + "</span></label><br>");
+ 				var answer2 = ("<label> <input type='radio' name='answer' class='radio'> <span>" + val.mcAnswer2 + "</span></label><br>"); 
+ 				var answer3 = ("<label> <input type='radio' name='answer' class='radio'> <span>" + val.mcAnswer3 + "</span></label><br>");
 				
 				$(".board").fadeOut(400, function () {
 					$("#choice p").fadeIn(400);
 				}); 
 
 				$("#choice p").empty();
-				$("#choice p").append("<span>" + val.question+ "</span>");
+				$("#choice p").append("<span class='question'>" + val.question+ "</span>");
 				$("#choice p").append(form);
 
 				form.empty();
