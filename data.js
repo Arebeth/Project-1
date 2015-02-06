@@ -142,7 +142,7 @@ var data = [
 	mcAnswer1: "This is my favorite Christmas Carol.",
 	mcAnswer2: "He is a snappy dresser.",
 	mcAnswer3: "He is so sexy!",
-	realAnswer: "answer",
+	realAnswer: "He is so sexy!",
 	id: 16,
 	category: "Category A"
 },
@@ -175,17 +175,17 @@ var data = [
 },
 {
 	question: "In high school, what did he and some friends do to the principal's Model T car?",
-	mcAnswer1: "Lifted it into the town's bandstand.",
+	mcAnswer1: "Parked it in the town's bandstand.",
 	mcAnswer2: "Hid it in the woods.",
 	mcAnswer3: "Parked it down the street.",
-	realAnswer: "answer",
+	realAnswer: "Parked it in the town's bandstand.",
 	id: 20,
 	category: "Category E"
 },
 {
 	question: "Every time the Yankees lose...",
 	mcAnswer1: "*cries*",
-	mcAnswer2: "{The opposing team] is cheating.",
+	mcAnswer2: "The opposing team is cheating.",
 	mcAnswer3: "The referees are cheating.",
 	realAnswer: "*cries*",
 	id: 21,
@@ -223,7 +223,7 @@ var data = [
 	mcAnswer1: "At a rest stop.",
 	mcAnswer2: "On the side of the road.",
 	mcAnswer3: "In a watermelon patch.",
-	realAnswer: "answer",
+	realAnswer: "In a watermelon patch.",
 	id: 25,
 	category: "Category E"
 }];
